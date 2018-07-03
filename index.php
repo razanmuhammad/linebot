@@ -94,3 +94,8 @@ file_put_contents('./reply.json',$result);
 
 
 $client->replyMessage($balas);
+
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('cyMPLJnW8Bw4aU3UU2aD5Pc+RRIBY3O1FCMosyOo+oxXCMi9OeC3KKfOF5XesauA4UXY9yBSTwPusn8XO07G6GbFbh9kYCkx1wx6Er85PNfTlUW62rCxZ92RJP3imIAT7CzZjiGmd1DdOKqjSoMwtQdB04t89/1O/w1cDnyilFU=');
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '67fa8c075ad4d5e1970d135a79a44b1e']);
+$response = $bot->leaveRoom('<roomId>');
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
